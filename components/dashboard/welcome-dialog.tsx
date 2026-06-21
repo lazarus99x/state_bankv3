@@ -14,7 +14,7 @@ import {
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 
-/* ── Account Details ────────────────────────────────────────── */
+/* -- Account Details ------------------------------------------ */
 interface AccountDetails {
   accountNumber: string;
   accountName: string;
@@ -24,14 +24,14 @@ interface AccountDetails {
   balance: number;
 }
 
-/* ── Props ──────────────────────────────────────────────────── */
+/* -- Props ---------------------------------------------------- */
 interface WelcomeDialogProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
   accountDetails: AccountDetails;
 }
 
-/* ── Welcome Dialog ─────────────────────────────────────────── */
+/* -- Welcome Dialog ------------------------------------------- */
 export default function WelcomeDialog({
   open,
   onOpenChange,

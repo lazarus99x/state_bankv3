@@ -17,7 +17,7 @@ import { toast } from "sonner";
 import { signUpAction } from "@/app/_actions/auth";
 import { createClient } from "@/utils/supabase/client";
 
-/* ── Account Types ──────────────────────────────────────────── */
+/* -- Account Types -------------------------------------------- */
 const accountTypes = [
   { value: "checking", label: "Personal Checking" },
   { value: "savings", label: "Personal Savings" },
@@ -27,7 +27,7 @@ const accountTypes = [
   { value: "joint", label: "Joint Account" },
 ];
 
-/* ── Currencies ─────────────────────────────────────────────── */
+/* -- Currencies ----------------------------------------------- */
 const currencies = [
   { value: "USD", label: "USD — US Dollar", symbol: "$" },
   { value: "EUR", label: "EUR — Euro", symbol: "€" },
@@ -39,7 +39,7 @@ const currencies = [
   { value: "NGN", label: "NGN — Nigerian Naira", symbol: "₦" },
 ];
 
-/* ── US States ──────────────────────────────────────────────── */
+/* -- US States ------------------------------------------------ */
 const states = [
   "AL",
   "AK",
@@ -93,7 +93,7 @@ const states = [
   "WY",
 ];
 
-/* ── Password Strength ──────────────────────────────────────── */
+/* -- Password Strength ---------------------------------------- */
 type StrengthLevel = "empty" | "weak" | "fair" | "good" | "strong";
 
 const strengthConfig: Record<
@@ -144,7 +144,7 @@ function evaluatePasswordStrength(password: string): StrengthLevel {
   return "strong";
 }
 
-/* ── Validation Rules ───────────────────────────────────────── */
+/* -- Validation Rules ----------------------------------------- */
 const passwordRules = [
   { id: "length", label: "At least 8 characters", test: (p: string) => p.length >= 8 },
   { id: "uppercase", label: "One uppercase letter", test: (p: string) => /[A-Z]/.test(p) },
@@ -153,7 +153,7 @@ const passwordRules = [
   { id: "special", label: "One special character", test: (p: string) => /[^a-zA-Z0-9]/.test(p) },
 ];
 
-/* ── Form Data Type ─────────────────────────────────────────── */
+/* -- Form Data Type ------------------------------------------- */
 interface SignUpFormData {
   fullName: string;
   email: string;
@@ -172,7 +172,7 @@ interface SignUpFormData {
   agreePrivacy: boolean;
 }
 
-/* ── Sign Up Page ───────────────────────────────────────────── */
+/* -- Sign Up Page --------------------------------------------- */
 export default function SignUpPage() {
   const [form, setForm] = useState<SignUpFormData>({
     fullName: "",
@@ -340,7 +340,7 @@ export default function SignUpPage() {
           {/* Form Card */}
           <div className="rounded-2xl border border-border-default bg-bg-card p-6 shadow-xl sm:p-8">
             <form onSubmit={handleSubmit} className="space-y-6">
-              {/* ── Section: Personal Information ──────────── */}
+              {/* -- Section: Personal Information ------------ */}
               <div>
                 <h2 className="mb-4 font-display text-base font-semibold text-text-primary">
                   Personal Information
@@ -455,10 +455,10 @@ export default function SignUpPage() {
                 </div>
               </div>
 
-              {/* ── Divider ───────────────────────────────── */}
+              {/* -- Divider --------------------------------- */}
               <div className="border-t border-border-default" />
 
-              {/* ── Section: Address ──────────────────────── */}
+              {/* -- Section: Address ------------------------ */}
               <div>
                 <h2 className="mb-4 font-display text-base font-semibold text-text-primary">
                   Address
@@ -557,10 +557,10 @@ export default function SignUpPage() {
                 </div>
               </div>
 
-              {/* ── Divider ───────────────────────────────── */}
+              {/* -- Divider --------------------------------- */}
               <div className="border-t border-border-default" />
 
-              {/* ── Section: Account Preferences ───────────── */}
+              {/* -- Section: Account Preferences ------------- */}
               <div>
                 <h2 className="mb-4 font-display text-base font-semibold text-text-primary">
                   Account Preferences
@@ -614,10 +614,10 @@ export default function SignUpPage() {
                 </div>
               </div>
 
-              {/* ── Divider ───────────────────────────────── */}
+              {/* -- Divider --------------------------------- */}
               <div className="border-t border-border-default" />
 
-              {/* ── Section: Security ──────────────────────── */}
+              {/* -- Section: Security ------------------------ */}
               <div>
                 <h2 className="mb-4 font-display text-base font-semibold text-text-primary">
                   Security
@@ -751,10 +751,10 @@ export default function SignUpPage() {
                 </div>
               </div>
 
-              {/* ── Divider ───────────────────────────────── */}
+              {/* -- Divider --------------------------------- */}
               <div className="border-t border-border-default" />
 
-              {/* ── Section: Agreements ────────────────────── */}
+              {/* -- Section: Agreements ---------------------- */}
               <div className="space-y-3">
                 <label className="flex items-start gap-3 cursor-pointer group">
                   <input
@@ -806,7 +806,7 @@ export default function SignUpPage() {
                 </label>
               </div>
 
-              {/* ── Submit ──────────────────────────────────── */}
+              {/* -- Submit ------------------------------------ */}
               <button
                 type="submit"
                 disabled={isLoading}

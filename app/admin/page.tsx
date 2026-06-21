@@ -1211,7 +1211,7 @@ function SettingsTab() {
         </div>
       </Card>
 
-      {/* ── Admin Change Password ── */}
+      {/* -- Admin Change Password -- */}
       <Card className="border border-white/10 bg-white/5 p-6 mb-6">
         <div className="flex items-center gap-2 mb-4">
           <Lock className="h-5 w-5 text-amber-400" />

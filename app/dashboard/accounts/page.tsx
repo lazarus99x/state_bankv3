@@ -25,7 +25,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useAccounts } from "@/hooks/use-banking";
 import type { BankAccount } from "@/hooks/use-banking";
 
-/* ── Icon map ────────────────────────────────────────────────── */
+/* -- Icon map -------------------------------------------------- */
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Checking: Wallet,
   Savings: PiggyBank,
@@ -39,7 +39,7 @@ const gradientMap: Record<string, string> = {
   "Business Checking": "from-amber-500 to-amber-600",
 };
 
-/* ── Container variants ─────────────────────────────────────── */
+/* -- Container variants --------------------------------------- */
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -52,7 +52,7 @@ const itemVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" as const } },
 };
 
-/* ── Accounts Page ───────────────────────────────────────────── */
+/* -- Accounts Page --------------------------------------------- */
 export default function AccountsPage() {
   const [showBalances, setShowBalances] = useState(true);
   const { accounts, loading, totalBalance, fmt } = useAccounts();
@@ -62,7 +62,7 @@ export default function AccountsPage() {
     .filter((a) => a.account_type === "Credit")
     .reduce((s, a) => s + a.balance, 0);
 
-  /* ── Loading ──────────────────────────────────────────────── */
+  /* -- Loading ------------------------------------------------ */
   if (loading) {
     return (
       <motion.div
@@ -77,7 +77,7 @@ export default function AccountsPage() {
     );
   }
 
-  /* ── Empty state ──────────────────────────────────────────── */
+  /* -- Empty state -------------------------------------------- */
   if (!accounts.length) {
     return (
       <motion.div

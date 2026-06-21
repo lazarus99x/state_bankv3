@@ -20,14 +20,14 @@ import {
   Quote,
 } from "lucide-react";
 
-/* ── Free Unsplash Images (CC0, no watermark) ──────────────── */
+/* -- Free Unsplash Images (CC0, no watermark) ---------------- */
 const IMG = {
   hero: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80",
   office: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&q=80",
   handshake: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=1200&q=80",
 };
 
-/* ── Stat Data ──────────────────────────────────────────────── */
+/* -- Stat Data ------------------------------------------------ */
 const stats = [
   { label: "Active Users", value: "2.4M+", icon: Users },
   { label: "Countries Served", value: "85+", icon: Globe },
@@ -35,7 +35,7 @@ const stats = [
   { label: "Avg. Rating", value: "4.9★", icon: TrendingUp },
 ];
 
-/* ── Features Grid ──────────────────────────────────────────── */
+/* -- Features Grid -------------------------------------------- */
 const features = [
   {
     title: "Military-Grade Security",
@@ -87,7 +87,7 @@ const features = [
   },
 ];
 
-/* ── Testimonials ───────────────────────────────────────────── */
+/* -- Testimonials --------------------------------------------- */
 const testimonials = [
   {
     name: "Sarah Chen",
@@ -115,7 +115,7 @@ const testimonials = [
   },
 ];
 
-/* ── Container Variants ─────────────────────────────────────── */
+/* -- Container Variants --------------------------------------- */
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -133,7 +133,7 @@ const itemVariants = {
   },
 } as const;
 
-/* ── FadeIn Component ───────────────────────────────────────── */
+/* -- FadeIn Component ----------------------------------------- */
 function FadeIn({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
   return (
     <motion.div
@@ -148,7 +148,7 @@ function FadeIn({ children, className = "", delay = 0 }: { children: React.React
   );
 }
 
-/* ── Landing Page ───────────────────────────────────────────── */
+/* -- Landing Page --------------------------------------------- */
 export default function LandingPage() {
   const heroRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -160,14 +160,14 @@ export default function LandingPage() {
 
   return (
     <div className="relative flex min-h-screen flex-col overflow-hidden bg-bg-base">
-      {/* ── Background Decorative Shapes ────────────────── */}
+      {/* -- Background Decorative Shapes ------------------ */}
       <div className="pointer-events-none fixed inset-0 overflow-hidden">
         <div className="floating-shape -top-40 -left-40 h-[500px] w-[500px] bg-primary opacity-[0.08]" />
         <div className="floating-shape top-1/3 -right-32 h-[400px] w-[400px] bg-accent-gold opacity-[0.06]" />
         <div className="floating-shape -bottom-32 left-1/3 h-[350px] w-[350px] bg-primary opacity-[0.05]" />
       </div>
 
-      {/* ── Navigation ──────────────────────────────────── */}
+      {/* -- Navigation ------------------------------------ */}
       <header className="glass-light fixed top-0 left-0 right-0 z-50 border-b border-border-muted/40 backdrop-blur-xl">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           <Link href="/" className="flex items-center gap-2">
@@ -589,7 +589,7 @@ export default function LandingPage() {
         </section>
       </main>
 
-      {/* ── Footer ──────────────────────────────────────────── */}
+      {/* -- Footer -------------------------------------------- */}
       <footer className="relative border-t border-border-default bg-bg-surface/30">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">

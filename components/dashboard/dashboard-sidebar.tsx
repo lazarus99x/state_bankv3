@@ -20,7 +20,7 @@ import {
 import { cn } from "@/lib/utils";
 import { APP_NAME } from "@/lib/constants";
 
-/* ── Navigation Items ─────────────────────────────────────── */
+/* -- Navigation Items --------------------------------------- */
 const navItems = [
   { label: "Overview", href: "/dashboard", icon: LayoutDashboard },
   { label: "My Accounts", href: "/dashboard/accounts", icon: Building2 },
@@ -32,13 +32,13 @@ const navItems = [
   { label: "Settings", href: "/dashboard/settings", icon: Settings },
 ];
 
-/* ── Props ──────────────────────────────────────────────────── */
+/* -- Props ---------------------------------------------------- */
 interface DashboardSidebarProps {
   open: boolean;
   onClose: () => void;
 }
 
-/* ── Sidebar Component ──────────────────────────────────────── */
+/* -- Sidebar Component ---------------------------------------- */
 export default function DashboardSidebar({
   open,
   onClose,

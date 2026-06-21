@@ -19,7 +19,7 @@ import {
 import { cn } from "@/lib/utils";
 import { useUser, useClerk } from "@/lib/auth";
 
-/* ── Breadcrumb map ─────────────────────────────────────────── */
+/* -- Breadcrumb map ------------------------------------------- */
 const breadcrumbMap: Record<string, string> = {
   "/dashboard": "Overview",
   "/dashboard/accounts": "My Accounts",
@@ -32,12 +32,12 @@ const breadcrumbMap: Record<string, string> = {
   "/dashboard/settings": "Settings",
 };
 
-/* ── Props ──────────────────────────────────────────────────── */
+/* -- Props ---------------------------------------------------- */
 interface DashboardTopNavProps {
   onMenuClick: () => void;
 }
 
-/* ── Top Nav Component ──────────────────────────────────────── */
+/* -- Top Nav Component ---------------------------------------- */
 export default function DashboardTopNav({ onMenuClick }: DashboardTopNavProps) {
   const pathname = usePathname();
   const router = useRouter();

@@ -23,7 +23,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
-/* ── US Banks ───────────────────────────────────────────────── */
+/* -- US Banks ------------------------------------------------- */
 const US_BANKS = [
   "Chase",
   "Bank of America",
@@ -87,7 +87,7 @@ const US_BANKS = [
   "United Community Bank",
 ];
 
-/* ── Animations ─────────────────────────────────────────────── */
+/* -- Animations ----------------------------------------------- */
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: { opacity: 1, transition: { staggerChildren: 0.06 } },
@@ -102,11 +102,11 @@ const checkmarkVariants = {
   visible: { pathLength: 1, opacity: 1, transition: { duration: 0.6, ease: "easeInOut" as const } },
 } as const;
 
-/* ── Currency formatter ─────────────────────────────────────── */
+/* -- Currency formatter --------------------------------------- */
 const fmt = (n: number) =>
   new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(n);
 
-/* ── Dropdown sub-component ─────────────────────────────────── */
+/* -- Dropdown sub-component ----------------------------------- */
 function BankDropdown({
   value,
   onChange,
@@ -206,7 +206,7 @@ function BankDropdown({
   );
 }
 
-/* ── Step Indicator ─────────────────────────────────────────── */
+/* -- Step Indicator ------------------------------------------- */
 function StepIndicator({ current, steps }: { current: number; steps: string[] }) {
   return (
     <div className="flex items-center justify-center gap-2">
@@ -246,7 +246,7 @@ function StepIndicator({ current, steps }: { current: number; steps: string[] })
   );
 }
 
-/* ── Main Page ──────────────────────────────────────────────── */
+/* -- Main Page ------------------------------------------------ */
 export default function TransferPage() {
   const router = useRouter();
 
@@ -278,7 +278,7 @@ export default function TransferPage() {
   // Shared loading
   const [formLoading, setFormLoading] = useState(false);
 
-  /* ── Progress simulation ──────────────────────────────────── */
+  /* -- Progress simulation ------------------------------------ */
   useEffect(() => {
     if (step !== "processing") return;
 
@@ -310,7 +310,7 @@ export default function TransferPage() {
     return () => clearInterval(timer);
   }, [step]);
 
-  /* ── Initiate Transfer ────────────────────────────────────── */
+  /* -- Initiate Transfer -------------------------------------- */
   const handleInitiate = async () => {
     // Validate
     if (!bankName) {
@@ -397,7 +397,7 @@ export default function TransferPage() {
     }
   };
 
-  /* ── Verify POV Code ──────────────────────────────────────── */
+  /* -- Verify POV Code ---------------------------------------- */
   const handleVerifyPov = async () => {
     if (!povCode || povCode.length !== 6 || !/^\d{6}$/.test(povCode)) {
       toast.error("Please enter a valid 6-digit POV code");
@@ -437,7 +437,7 @@ export default function TransferPage() {
     }
   };
 
-  /* ── Form step ────────────────────────────────────────────── */
+  /* -- Form step ---------------------------------------------- */
   const renderForm = () => (
     <motion.div
       key="form"
@@ -602,7 +602,7 @@ export default function TransferPage() {
     </motion.div>
   );
 
-  /* ── Processing step ──────────────────────────────────────── */
+  /* -- Processing step ---------------------------------------- */
   const renderProcessing = () => (
     <motion.div
       key="processing"
@@ -654,7 +654,7 @@ export default function TransferPage() {
     </motion.div>
   );
 
-  /* ── POV step ──────────────────────────────────────────────── */
+  /* -- POV step ------------------------------------------------ */
   const renderPov = () => (
     <motion.div
       key="pov"
@@ -737,7 +737,7 @@ export default function TransferPage() {
     </motion.div>
   );
 
-  /* ── Done step ─────────────────────────────────────────────── */
+  /* -- Done step ----------------------------------------------- */
   const renderDone = () => (
     <motion.div
       key="done"
@@ -829,7 +829,7 @@ export default function TransferPage() {
     </motion.div>
   );
 
-  /* ── Render ────────────────────────────────────────────────── */
+  /* -- Render -------------------------------------------------- */
   return (
     <div className="mx-auto max-w-2xl">
       {/* Step indicator */}

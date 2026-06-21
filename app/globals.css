@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
-/* ── StateBank Design Token System ─────────────────────────── */
+/* -- StateBank Design Token System --------------------------- */
 @theme inline {
-  /* ── Fonts ────────────────────────────────────────────────── */
+  /* -- Fonts -------------------------------------------------- */
   --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
   --font-display: var(--font-display), var(--font-inter), system-ui, sans-serif;
   --font-mono: var(--font-mono), ui-monospace, "Cascadia Code", monospace;
 
-  /* ── Core Brand Colors ───────────────────────────────────── */
+  /* -- Core Brand Colors ------------------------------------- */
   --color-primary: #0066FF;
   --color-primary-dark: #0052CC;
   --color-primary-light: #3384FF;
@@ -20,30 +20,30 @@
   --color-destructive: #EF4444;
   --color-accent: #1A2236;
 
-  /* ── Background Palette ──────────────────────────────────── */
+  /* -- Background Palette ------------------------------------ */
   --color-bg-base: #0B0F1A;
   --color-bg-surface: #111827;
   --color-bg-elevated: #1A2236;
   --color-bg-card: #141B2D;
   --color-bg-input: #0F1520;
 
-  /* ── Text Palette ────────────────────────────────────────── */
+  /* -- Text Palette ------------------------------------------ */
   --color-text-primary: #F1F5F9;
   --color-text-secondary: #94A3B8;
   --color-text-muted: #64748B;
 
-  /* ── Border Palette ──────────────────────────────────────── */
+  /* -- Border Palette ---------------------------------------- */
   --color-border: #1E293B;
   --color-border-default: #1E293B;
   --color-border-muted: #1E293B80;
   --color-border-active: #0066FF66;
 
-  /* ── Shadows ─────────────────────────────────────────────── */
+  /* -- Shadows ----------------------------------------------- */
   --shadow-glow-primary: 0 0 120px 40px rgba(0, 102, 255, 0.06);
   --shadow-glow-gold: 0 0 120px 40px rgba(245, 166, 35, 0.04);
 }
 
-/* ── Base Styles ───────────────────────────────────────────── */
+/* -- Base Styles --------------------------------------------- */
 @layer base {
   * {
     border-color: var(--color-border-default);
@@ -66,7 +66,7 @@
   }
 }
 
-/* ── Custom Utility Classes ────────────────────────────────── */
+/* -- Custom Utility Classes ---------------------------------- */
 @layer utilities {
   /* Glassmorphism panels */
   .glass-light {
@@ -122,7 +122,7 @@
   }
 }
 
-/* ── Animations ────────────────────────────────────────────── */
+/* -- Animations ---------------------------------------------- */
 @keyframes float {
   0% {
     transform: translate(0, 0) scale(1);

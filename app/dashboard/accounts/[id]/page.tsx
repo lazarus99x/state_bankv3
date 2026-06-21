@@ -28,7 +28,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { createClient } from "@/utils/supabase/client";
 import type { BankAccount, Transaction } from "@/hooks/use-banking";
 
-/* ── Icon / gradient helpers ─────────────────────────────────── */
+/* -- Icon / gradient helpers ----------------------------------- */
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Checking: Wallet,
   Savings: PiggyBank,
@@ -42,18 +42,18 @@ const gradientMap: Record<string, string> = {
   "Business Checking": "from-amber-500 via-amber-600 to-amber-700",
 };
 
-/* ──── Status helpers ────────────────────────────────────────── */
+/* ---- Status helpers ------------------------------------------ */
 const statusConfig: Record<string, { icon: React.ComponentType<{ className?: string }>; class: string }> = {
   completed: { icon: CheckCircle2, class: "text-success" },
   pending: { icon: Clock, class: "text-amber-400" },
   failed: { icon: XCircle, class: "text-destructive" },
 };
 
-/* ── Currency formatter ─────────────────────────────────────── */
+/* -- Currency formatter --------------------------------------- */
 const fmt = (n: number) =>
   new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(n);
 
-/* ── Account Detail Page ─────────────────────────────────────── */
+/* -- Account Detail Page --------------------------------------- */
 export default function AccountDetailPage() {
   const params = useParams();
   const { id } = params;
@@ -98,7 +98,7 @@ export default function AccountDetailPage() {
       ? transactions
       : transactions.filter((tx) => tx.status === statusFilter);
 
-  /* ── Loading ──────────────────────────────────────────────── */
+  /* -- Loading ------------------------------------------------ */
   if (loading) {
     return (
       <div className="flex flex-col items-center justify-center py-24">
@@ -108,7 +108,7 @@ export default function AccountDetailPage() {
     );
   }
 
-  /* ── Not found ────────────────────────────────────────────── */
+  /* -- Not found ---------------------------------------------- */
   if (!account) {
     return (
       <div className="flex flex-col items-center justify-center py-20">

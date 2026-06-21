@@ -22,7 +22,7 @@ import { cn } from "@/lib/utils";
 import { useAccounts, useRecentTransactions } from "@/hooks/use-banking";
 import { Card, CardContent } from "@/components/ui/card";
 
-/* ── Quick Actions ──────────────────────────────────────────── */
+/* -- Quick Actions -------------------------------------------- */
 const quickActions = [
   { label: "Transfer", href: "/dashboard/transfer", icon: ArrowUpDown, color: "from-blue-500/20 to-blue-600/10", accent: "text-blue-400" },
   { label: "Deposit", href: "/dashboard/deposit", icon: Plus, color: "from-emerald-500/20 to-emerald-600/10", accent: "text-emerald-400" },
@@ -30,11 +30,11 @@ const quickActions = [
   { label: "Pay Bills", href: "/dashboard/bill-pay", icon: Receipt, color: "from-purple-500/20 to-purple-600/10", accent: "text-purple-400" },
 ];
 
-/* ── Currency formatter ─────────────────────────────────────── */
+/* -- Currency formatter --------------------------------------- */
 const fmt = (n: number) =>
   new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(n);
 
-/* ── Item Variants ──────────────────────────────────────────── */
+/* -- Item Variants -------------------------------------------- */
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -52,7 +52,7 @@ const itemVariants = {
   },
 } as const;
 
-/* ── Dashboard Overview Page ─────────────────────────────────── */
+/* -- Dashboard Overview Page ----------------------------------- */
 export default function DashboardOverview() {
   const [showBalances, setShowBalances] = useState(true);
   const { accounts, loading: acctsLoading, totalBalance, fmt } = useAccounts();

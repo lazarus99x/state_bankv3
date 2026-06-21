@@ -8,7 +8,7 @@ import DashboardSidebar from "@/components/dashboard/dashboard-sidebar";
 import DashboardTopNav from "@/components/dashboard/dashboard-top-nav";
 import WelcomeDialog from "@/components/dashboard/welcome-dialog";
 
-/* ── Default account details (for welcome dialog) ──────────── */
+/* -- Default account details (for welcome dialog) ------------ */
 const defaultAccountDetails = {
   accountNumber: "SB-XXXX-XXXX-XXXX",
   accountName: "Premium Checking",
@@ -18,7 +18,7 @@ const defaultAccountDetails = {
   balance: 0,
 };
 
-/* ── Dashboard Layout ──────────────────────────────────────── */
+/* -- Dashboard Layout ---------------------------------------- */
 export default function DashboardLayout({
   children,
 }: {
@@ -31,14 +31,14 @@ export default function DashboardLayout({
   const [accountDetails, setAccountDetails] = useState(defaultAccountDetails);
   const [welcomeChecked, setWelcomeChecked] = useState(false);
 
-  /* ── Auth redirect ─────────────────────────────────────────── */
+  /* -- Auth redirect ------------------------------------------- */
   useEffect(() => {
     if (isLoaded && !isSignedIn) {
       router.replace("/sign-in");
     }
   }, [isLoaded, isSignedIn, router]);
 
-  /* ── Check welcome dialog ──────────────────────────────────── */
+  /* -- Check welcome dialog ------------------------------------ */
   useEffect(() => {
     if (!isLoaded || !isSignedIn) return;
 
@@ -95,7 +95,7 @@ export default function DashboardLayout({
     checkWelcome();
   }, [isLoaded, isSignedIn, user]);
 
-  /* ── Loading state ─────────────────────────────────────────── */
+  /* -- Loading state ------------------------------------------- */
   if (!isLoaded || !welcomeChecked) {
     return (
       <div className="flex min-h-screen items-center justify-center bg-bg-base">

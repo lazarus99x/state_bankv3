@@ -27,7 +27,7 @@ import {
 import { createClient } from "@/utils/supabase/client";
 import type { BankAccount } from "@/hooks/use-banking";
 
-/* ── Container variants ─────────────────────────────────────── */
+/* -- Container variants --------------------------------------- */
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -40,7 +40,7 @@ const itemVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" as const } },
 };
 
-/* ── Copyable Field ─────────────────────────────────────────── */
+/* -- Copyable Field ------------------------------------------- */
 function CopyField({ label, value }: { label: string; value: string }) {
   const [copied, setCopied] = useState(false);
   const handleCopy = () => {
@@ -67,7 +67,7 @@ function CopyField({ label, value }: { label: string; value: string }) {
   );
 }
 
-/* ── Deposit Page ────────────────────────────────────────────── */
+/* -- Deposit Page ---------------------------------------------- */
 export default function DepositPage() {
   const [accounts, setAccounts] = useState<BankAccount[]>([]);
   const [loading, setLoading] = useState(true);
@@ -90,7 +90,7 @@ export default function DepositPage() {
     fetchAccounts();
   }, []);
 
-  /* ── Loading ──────────────────────────────────────────────── */
+  /* -- Loading ------------------------------------------------ */
   if (loading) {
     return (
       <div className="flex flex-col items-center justify-center py-24">
@@ -102,7 +102,7 @@ export default function DepositPage() {
 
   const primaryAccount = accounts[0] || null;
 
-  /* ── Empty state ──────────────────────────────────────────── */
+  /* -- Empty state -------------------------------------------- */
   if (!primaryAccount) {
     return (
       <motion.div

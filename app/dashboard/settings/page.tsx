@@ -32,7 +32,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useUser, useClerk } from "@/lib/auth";
 
-/* ── Container variants ─────────────────────────────────────── */
+/* -- Container variants --------------------------------------- */
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -45,7 +45,7 @@ const itemVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" as const } },
 };
 
-/* ── Settings Page ───────────────────────────────────────────── */
+/* -- Settings Page --------------------------------------------- */
 export default function SettingsPage() {
   const { user } = useUser();
   const [showCurrentPassword, setShowCurrentPassword] = useState(false);
@@ -219,7 +219,7 @@ export default function SettingsPage() {
             </TabsList>
           </div>
 
-          {/* ── Profile Tab ───────────────────────────────────── */}
+          {/* -- Profile Tab ------------------------------------- */}
           <TabsContent value="profile">
             {isLoadingProfile ? (
               <Card className="border-border mt-4">
@@ -355,7 +355,7 @@ export default function SettingsPage() {
             )}
           </TabsContent>
 
-          {/* ── Security Tab ──────────────────────────────────── */}
+          {/* -- Security Tab ------------------------------------ */}
           <TabsContent value="security">
             <Card className="border-border mt-4">
               <CardHeader>
@@ -479,7 +479,7 @@ export default function SettingsPage() {
             </Card>
           </TabsContent>
 
-          {/* ── Notifications Tab ─────────────────────────────── */}
+          {/* -- Notifications Tab ------------------------------- */}
           <TabsContent value="notifications">
             <Card className="border-border mt-4">
               <CardHeader>
@@ -530,7 +530,7 @@ export default function SettingsPage() {
             </Card>
           </TabsContent>
 
-          {/* ── Preferences Tab ───────────────────────────────── */}
+          {/* -- Preferences Tab --------------------------------- */}
           <TabsContent value="preferences">
             <Card className="border-border mt-4">
               <CardHeader>
@@ -566,7 +566,7 @@ export default function SettingsPage() {
             </Card>
           </TabsContent>
 
-          {/* ── Devices Tab ───────────────────────────────────── */}
+          {/* -- Devices Tab ------------------------------------- */}
           <TabsContent value="devices">
             <Card className="border-border mt-4">
               <CardHeader>

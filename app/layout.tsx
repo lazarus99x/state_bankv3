@@ -6,7 +6,7 @@ import "./globals.css";
 
 const SmartsuppChat = dynamic(() => import("@/components/SmartsuppChat"));
 
-/* ── Fonts ────────────────────────────────────────────────── */
+/* -- Fonts -------------------------------------------------- */
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
@@ -25,7 +25,7 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
-/* ── Metadata ─────────────────────────────────────────────── */
+/* -- Metadata ----------------------------------------------- */
 export const metadata: Metadata = {
   title: {
     default: "StateBank — Premium Digital Banking",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
   },
 };
 
-/* ── Root Layout ──────────────────────────────────────────── */
+/* -- Root Layout -------------------------------------------- */
 export default function RootLayout({
   children,
 }: Readonly<{

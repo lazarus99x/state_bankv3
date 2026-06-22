@@ -23,7 +23,7 @@ export async function GET() {
       .eq("user_id", profile.id)
       .single();
 
-    return NextResponse.json({ isAdmin: adminProfile?.role === "admin" });
+    return NextResponse.json({ isAdmin: adminProfile?.role === "admin" || adminProfile?.role === "super_admin" });
   } catch {
     return NextResponse.json({ isAdmin: false });
   }
